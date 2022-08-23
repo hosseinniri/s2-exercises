@@ -18,7 +18,7 @@ int main(int argc, char *argv[])
         cout << "Invalid input :number of argumants are not enough [at least 2 inputs requierd]";
         return 0;
     }
-        double sample_number ;
+        int sample_number ;
          int resulution_bit_number ;
     try
     {
