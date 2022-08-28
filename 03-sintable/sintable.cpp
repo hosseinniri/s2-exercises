@@ -8,11 +8,7 @@ using namespace std;
 
 int main(int argc, char *argv[])
 {
-    // if(!isdigit(argv[1][0]) || !isdigit(argv[2][0]))
-    // {
-    //     cout << "\n invalid input argumant [arg[1] and arg[2] must be number.";
-    //     return 0;
-    // }
+ 
     if(argc < 3)
     {
         cout << "Invalid input :number of argumants are not enough [at least 2 inputs requierd]";
@@ -46,8 +42,6 @@ int main(int argc, char *argv[])
 
     
 
-
-    // cout << "Abs max of sin :" << sin_max;
     double index;
 
     
