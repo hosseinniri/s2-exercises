@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <string>
+#include <algorithm>
 
 int main(int argc, char *argv[])
 {
@@ -33,45 +34,46 @@ int main(int argc, char *argv[])
     int y_range{max - min + 1};
     int x_range{argc};
 
-    for (int j = max; j >= min; j--)
+
+    std::vector<int> v = barValue;
+    std::sort(v.begin(), v.end(), std::greater<int>());
+    int z=0;
+
+    std::cout <<"^\n";
+
+
+    for (int j = 0 ; j < y_range; j++)
     {
-        // for (int i = 1; i < argc; i++)
-        // {
-        if(j==0)
-        {
-            for(int z=0;z<argc;z++) std::cout<<"-";
-            std::cout<<"\n";
-        }
-
+        // std::vector<int> maxidx;
+        // // std::cout<<"|";
         
-        //  for (int i = 0; i < x_range; i++)
-        // {
-            
-        //     if (barValue[i] < min)
-        //     {
-        //         min = barValue[i];
-        //         min_index = i;
-        //     }
-        //     if (barValue[i] > max)
-        //     {
-        //         max = barValue[i];
-        //         max_index = i;
-        //     }
-        // }
-        for (int i = 0; i < x_range; i++)
+
+        for (int i = 0; i < x_range-1; i++)
         {
 
-            if (barValue[i] == max)
+            if(barValue[i] == v[0])
             {
+                
+                // maxidx.push_back(i); 
                 std::cout << "#";
-                // barValue.assign(i, max);
-                break;
             }
+            
             else
                 std::cout << " ";
+            
         }
-         std::cout << "\n";
+        v.erase(v.begin());
+        std::cout << "\n";
+        // if(j==3)
+        // {
+        //     for(int i=0; i<x_range;i++) 
+        //     if(i==0) std::cout<<"+";
+        //     else std::cout<< "-";
+        // }
+   
+        
     }
+    std::cout <<"v\n";
 
     return 0;
 }
